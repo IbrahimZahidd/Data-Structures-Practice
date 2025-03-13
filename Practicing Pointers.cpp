@@ -99,6 +99,14 @@ int main()
     
     // Deallocate memory for dynamic array
     delete[] dynamicArray;
+
+    // concept 9
+
+    int a=1;
+    int* b=&a;
+    int* c;
+    c=b;
+    cout<<*c;
     
     return 0;
 }
