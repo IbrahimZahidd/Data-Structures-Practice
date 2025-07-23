@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int majorityElement(vector<int>& nums) {
+    int ans = 0, freq = 0;
+    for(int i = 0; i < nums.size(); i++) {
+        if (freq == 0) {
+            ans = nums[i];
+        }
+        if (ans == nums[i]) {
+            freq++;
+        } else {
+            freq--;
+        }
+    }
+
+    // Verify if ans is actually a majority
+    int count = 0;
+    for (int num : nums) {
+        if (num == ans) count++;
+    }
+
+    if (count > nums.size() / 2) return ans;
+
+    // If no majority exists
+    return -1; // or any other signal
+}
+
+
+int main()
+{
+    vector<int> nums = {1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,1,1,1};
+    cout<<majorityElement(nums);
+    return 0;
+}
