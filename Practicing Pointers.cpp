@@ -107,6 +107,20 @@ int main()
     int* c;
     c=b;
     cout<<*c;
+
+    // concept 10
+
+    int a = 5;
+    int *b = &a;
+    int **c = &b;
+    cout<< &a << " " << b << " " << *b<<endl;
+    cout<< &b << " " << " " << c << " " << **c << " " << &c << " " << *c << endl;
     
     return 0;
 }
+
+/*
+
+**c = *(*c) = *(b) = *b = 5
+
+*/
